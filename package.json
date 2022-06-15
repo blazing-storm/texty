@@ -1,15 +1,15 @@
 {
-  "name": "texty",
-  "version": "1.0.0",
-  "description": "A realtime web chat application",
-  "main": "server.js",
-  "scripts": {
-    "dev": "cd backend && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Mayank Agrawal",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^7.2.1"
-  }
+    "name": "texty",
+    "version": "1.0.0",
+    "description": "A realtime web chat application",
+    "main": "server.js",
+    "scripts": {
+        "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" ",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Mayank Agrawal",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^7.2.1"
+    }
 }
