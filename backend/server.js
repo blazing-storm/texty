@@ -1,7 +1,10 @@
 const express = require("express");
 const env = require("./config/environment");
 const chats = require("./data/data");
+const connectDB = require("./config/mongoose");
+const colors = require("colors");
 
+connectDB();
 const app = express();
 
 app.get("/", (req, res) => {
@@ -14,12 +17,12 @@ app.get("/api/chat", (req, res) => {
 
 app.get("/api/chat/:id", (req, res) => {
     const singleChat = chats.find((c) => c._id === req.params.id);
-    res.send(singleChat); 
+    res.send(singleChat);
 });
 
 app.listen(env.port, function (err) {
     if (err) {
         console.log(`Error in running the server: ${err}`);
     }
-    console.log(`Server is running on port: ${env.port}`);
+    console.log(`Server is running on port: ${env.port}`.white.bold);
 });
