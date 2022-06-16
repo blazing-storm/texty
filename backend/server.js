@@ -4,6 +4,7 @@ const chats = require("./data/data");
 const connectDB = require("./config/mongoose");
 const colors = require("colors");
 const userRoutes = require("./routes/users");
+const chatRoutes = require("./routes/chats");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
 connectDB();
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/user", userRoutes);
+app.use("/api/chat", chatRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
