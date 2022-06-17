@@ -13,11 +13,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [confirmpassword, setConfirmpassword] = useState();
-  const [pic, setPic] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmpassword, setConfirmpassword] = useState('');
+  const [pic, setPic] = useState('');
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
 
