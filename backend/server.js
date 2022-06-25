@@ -33,9 +33,20 @@ app.use(errorHandler);
 //     res.send(singleChat);
 // });
 
-app.listen(env.port, function (err) {
+const server = app.listen(env.port, function (err) {
     if (err) {
         console.log(`Error in running the server: ${err}`);
     }
     console.log(`Server is running on port: ${env.port}`.white.bold);
+});
+
+const io = require("socket.io")(server, {
+    pingTimeout: 60000,
+    cors: {
+        origin: "http://localhost:3000",
+    },
+});
+
+io.on("connection", (socket) => {
+    console.log("Connected to Socket.io");
 });
