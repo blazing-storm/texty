@@ -16,8 +16,8 @@ import UpdateGroupChatModal from './miscellaneous/UpdateGroupChatModal';
 import axios from 'axios';
 import './styles.css';
 import ScrollableChat from './ScrollableChat';
-// import Lottie from 'react-lottie';
-// import animationData from "../animations/typing.json";
+import Lottie from 'lottie-react';
+import animationData from '../animations/typing.json';
 
 import io from 'socket.io-client';
 const ENDPOINT = 'http://localhost:5000';
@@ -39,9 +39,15 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   //   autoplay: true,
   //   animationData: animationData,
   //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
+  //     preserveAspectRatio: 'xMidYMid slice',
   //   },
   // };
+
+  const style = {
+    width: 70,
+    marginBottom: 15,
+    marginLeft: 0,
+  };
 
   const fetchMessages = async () => {
     if (!selectedChat) return;
@@ -235,13 +241,16 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             >
               {isTyping ? (
                 <div>
-                  Typing...
-                  {/* <Lottie
-                    options={defaultOptions}
-                    // height={50}
-                    width={70}
-                    style={{ marginBottom: 15, marginLeft: 0 }}
-                  /> */}
+                  {/* Typing... */}
+                  <Lottie
+                    animationData={animationData}
+                    style={style}
+
+                    // options={defaultOptions}
+                    // // height={50}
+                    // width={70}
+                    // style={{ marginBottom: 15, marginLeft: 0 }}
+                  />
                 </div>
               ) : (
                 <></>
