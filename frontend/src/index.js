@@ -9,11 +9,11 @@ const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
 root.render(
-  <StrictMode>
-    <BrowserRouter>
-      <ChatProvider>
-        <App />
-      </ChatProvider>
-    </BrowserRouter>
-  </StrictMode>
+  // <StrictMode>
+  <BrowserRouter>
+    <ChatProvider>
+      <App />
+    </ChatProvider>
+  </BrowserRouter>
+  // </StrictMode>
 );

@@ -20,7 +20,8 @@ import Lottie from 'lottie-react';
 import animationData from '../animations/typing.json';
 
 import io from 'socket.io-client';
-const ENDPOINT = 'http://localhost:5000';
+// const ENDPOINT = 'http://localhost:5000';
+const ENDPOINT = 'https://texty-chat-app.herokuapp.com/';
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {

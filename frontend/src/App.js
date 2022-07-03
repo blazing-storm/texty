@@ -15,7 +15,8 @@ const theme = extendTheme({
 function App() {
   return (
     <div className="App">
-      <ChakraProvider theme={theme}>
+      <ChakraProvider>
+        {/* <ChakraProvider theme={theme}> */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/chats" element={<ChatPage />} />
